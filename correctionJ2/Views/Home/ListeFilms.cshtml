@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Liste des Films</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>Titre</th>
+            <th>Année</th>
+            <th>Réalisateur</th>
+            <th>A été visionné</th>
+        </tr>
+        @foreach (correctionJ2.Models.Film film in ViewData["Films"] as List<correctionJ2.Models.Film>)
+        {
+            <tr>
+                <td>@film.Titre</td>
+                <td>@film.Année</td>
+                <td>@film.Realisateur</td>
+                <td>@film.Visionne</td>
+            </tr>
+        }
+    </table>
+    <br />
+    <div> Pour chercher un film, utiliser : "http://localhost:5000/Home/cherchefilm/VotreFilm"</div>
+</body>
+</html>
